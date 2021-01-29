@@ -8,9 +8,25 @@
 <body>
     <button style='margin:100px' onclick='onClick()'>I am inside iframe so I am clickable!!</button>
 <script>
+     window.addEventListener('mousemove',function(e){
+        console.log('iframe html',e.clientX,e.clientY);
+        if(e.clientY>=108 && e.clientY<=129 && e.clientX>=108 && e.clientY<=339){
+            window.top.postMessage({message:'SET_POINTER_EVENTS',payload:true},'*');
+        } else {
+            window.top.postMessage({message:'SET_POINTER_EVENTS',payload:false},'*');
+        }
+    });
     function onClick(){
         alert('Button in iframe clicked')
     }
+//     bottom: 129
+// height: 21
+// left: 108
+// right: 338.84375
+// top: 108
+// width: 230.84375
+// x: 108
+// y: 108
 </script>
 </body>
 </html>
