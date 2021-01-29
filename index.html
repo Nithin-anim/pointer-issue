@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pointer Issue</title>
+</head>
+<body>
+    <button onclick='onClick()'>I am below iframe so I want to be clickable!!</button>
+    <iframe src='iframe.html' style='position: absolute;top:0px;left:0px;z-index:999;width:100%;height:100%;border:4px solid black;'></iframe>
+<script>
+    function onClick(){
+        alert('Button below iframe clicked');
+    }
+</script>
+</body>
+</html>
